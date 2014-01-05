@@ -44,13 +44,13 @@ endif
 # Versioning System
  PRODUCT_VERSION_MAJOR = PRE-ALPHA
  PRODUCT_VERSION_MINOR = v0.0
- hydrogen_POSTFIX := $(shell date +"%Y%m%d-%H%M")
+ HYDROGEN_POSTFIX := $(shell date +"%Y%m%d-%H%M")
 
  # Set all versions
- hydrogen_VERSION := $(PRODUCT_VERSION_MAJOR)::$(PRODUCT_VERSION_MINOR)
- hydrogen_MOD_VERSION := $(TARGET_PRODUCT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(hydrogen_POSTFIX)
+ HYDROGEN_VERSION := $(PRODUCT_VERSION_MAJOR)::$(PRODUCT_VERSION_MINOR)
+ HYDROGEN_MOD_VERSION := $(TARGET_PRODUCT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(hydrogen_POSTFIX)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.hydrogen.version=$(hydrogen_VERSION) \
-    ro.modversion=$(hydrogen_MOD_VERSION)
+    ro.hydrogen.version=$(HYDROGEN_VERSION) \
+    ro.modversion=$(HYDROGEN_MOD_VERSION)
